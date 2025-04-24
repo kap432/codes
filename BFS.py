@@ -8,18 +8,23 @@ def bfs(graph, start):
         vertex = queue.popleft()
 
         if vertex not in visited:
-            print(vertex, end=' ')
+            print(vertex, "->", end=' ')
             visited.add(vertex)
             queue.extend(neighbor for neighbor in graph[vertex] if neighbor not in visited)
 
 # Example usage
 graph = {
-    'A': ['B', 'C'],
-    'B': ['A', 'D', 'E'],
-    'C': ['A', 'F'],
-    'D': ['B'],
-    'E': ['B', 'F'],
-    'F': ['C', 'E']
+    'A': ['K', 'H', 'P'],
+    'K': ['L', 'O', 'R'],
+    'H': ['T'],
+    'P': ['N', 'M'],
+    'N': [],
+    'T': [],
+    'R': [],
+    'L': [],
+    'O': [],
+    'M': ['J'],
+    'J': [],
 }
 
 bfs(graph, 'A')
