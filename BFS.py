@@ -10,7 +10,9 @@ def bfs(graph, start):
         if vertex not in visited:
             print(vertex, "->", end=' ')
             visited.add(vertex)
-            queue.extend(neighbor for neighbor in graph[vertex] if neighbor not in visited)
+            for neighbor in graph[vertex]:
+                if neighbor not in visited:
+                    queue.append(neighbor)
 
 # Example usage
 graph = {
