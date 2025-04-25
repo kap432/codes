@@ -8,7 +8,7 @@ def bfs(graph, start):
         vertex = queue.popleft()
 
         if vertex not in visited:
-            print(vertex, "->", end=' ')
+            print("->", vertex, end=' ')
             visited.add(vertex)
             for neighbor in graph[vertex]:
                 if neighbor not in visited:
