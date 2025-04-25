@@ -15,8 +15,10 @@ female(sangita).
 sibling(X, Y) :- parent(P, X), parent(P, Y), X \= Y.
 father(X, Y) :- male(X), parent(X, Y).
 mother(X, Y) :- female(X), parent(X, Y).
-grandfather(X, Y) :- male(X), parent(X, Z), parent(Z, Y).
-grandmother(X, Y) :- female(X), parent(X, Z), parent(Z, Y).
+% grandfather(X, Y) :- male(X), parent(X, Z), parent(Z, Y).
+% grandmother(X, Y) :- female(X), parent(X, Z), parent(Z, Y).
+grandfather(X, Y) :- male(X), grandparent(X,Y).
+grandmother(X, Y) :- female(X), grandparent(X,Y).
 grandparent(X, Y) :- parent(X, Z), parent(Z, Y).
 
 % --------- Sample Queries You Can Try ---------
